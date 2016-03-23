@@ -1,0 +1,12 @@
+*.pid.lock
+*.rvmrc
+*.log
+.rspec
+/.bundle
+/vendor/bundle
+/log/*
+/tmp/*
+/public/system/*
+/public/assets/*
+/spec/tmp/*
+**.orig

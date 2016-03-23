@@ -1,0 +1,24 @@
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name),  id: 'register', remote: true, format: :json) do |f| %>
+  <%= devise_error_messages! %>
+   <div class="inputs"><%= f.label :username %><br />
+    <%= f.text_field :username %></div>
+   <div class="inputs"><%= f.label :email %><br />
+    <%= f.email_field :email %></div>
+   <div class="inputs"><%= f.label :password %><br />
+    <%= f.password_field :password %></div>
+   <div class="inputs"><%= f.label "Confirm" %><br />
+    <%= f.password_field :password_confirmation %></div>
+  <%= f.submit "Sign up", {id: 'submit', style: "float:right;margin: 20px;"} %>
+  </div>
+<% end %>
+<script>
+$('#submit').click(function(){
+  $('form').bind("ajax:success", function(event, data, status, xhr) {
+    if (!data.error) {
+     window.location.href = data.location;
+    } else {      
+      $('.modal-header').html(data.error).attr("style", "font-size:26px;padding-top:15px;height:32px;color:red;");
+    }
+  });
+});
+</script>

@@ -1,0 +1,19 @@
+<div id="content2">
+  <h2><%= link_to "#wargames", irc_path %></h2>
+  <div class="items-holder"> 
+    <div class="items">
+      <div id="item-header">WARGAME</div>
+      <div id="item-header">STATUS</div>
+      <div id="item-header">IRC</div>
+      <div id="item-header">ADMIN</div>
+    </div>
+    <% @wargames.each do |wargame| %>
+    <div class="items">
+      <div class="item-left" id="item"><%= link_to wargame.name.upcase, wargame_path(wargame) %></div>
+      <div class="<%= wargame.status %>" id="item"><%= wargame.status.upcase %></div>
+      <div id="item"><%= link_to "##{wargame.id}", url_for("/wargames/#{wargame.id}/irc") %></div>
+      <div class="item-right" id="item"><%= wargame.admin %></div>
+    </div>
+    <% end %>
+  </div>
+</div>

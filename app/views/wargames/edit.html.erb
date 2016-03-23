@@ -1,0 +1,20 @@
+<div id="sessions_new">
+<div style="padding:10px 0 0 20px;" class="modal-header">
+  <h3 style="width:100px;color:limegreen"><%= @wargame.id.capitalize %></h3>
+</div>
+<%= form_for(@wargame) do |f| %>
+  <div class="modal-body">
+    <div class="inputs"><%= f.label :status %><br />
+      <%= f.text_field :status %></div>
+    <div class="inputs"><%= f.label :details %><br />
+      <%= f.text_field :details %></div>
+    <div class="inputs"><%= f.label :ssh_port, "SSH Port" %><br />
+      <%= f.text_field :ssh_port %></div>
+    <div class="inputs"><%= f.label :http_port, "HTTP Port" %><br />
+      <%= f.text_field :http_port %></div>
+    <div class="inputs"><%= f.label :admin %><br />
+      <%= f.text_field :admin %></div>
+  <%= f.submit "update", {style: "float:left;margin: 15px 17px 15px 20px"} %>
+  </div>
+<% end %>
+</div>

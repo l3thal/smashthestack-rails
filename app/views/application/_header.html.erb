@@ -1,0 +1,19 @@
+<div id="header">
+  <%= link_to image_tag('logo.gif', id: 'logo'), root_path %>
+</div>
+
+<div id="navigation">
+  <ul>
+    <li><%= link_to "Main", root_path %></li>
+    <li><%= link_to "Wargames", wargames_path %></li>
+    <li><%= link_to "FAQ", faq_path %></li>
+    <li>
+      <% if signed_in? %>
+      <%= link_to "Logout", destroy_user_session_path %>
+      <% else %>
+      <%= link_to 'Login', new_user_session_path, data: {toggle: "modal", target: "#modal"} %>
+    </li>
+    <% end %>
+  </ul>
+  <span style="float:right; padding-right:10px;" class="green"><%= signed_in? ? "Welcome, #{current_user.username}!" : "Welcome to SmashTheStack!" %></span>
+</div>

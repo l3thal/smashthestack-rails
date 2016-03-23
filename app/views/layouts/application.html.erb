@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SmashTheStack Wargaming Network</title>
+  <%= stylesheet_link_tag    "application", media: "screen, projection" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div id="container">
+    <%= render partial: "header" %>
+    <%= yield %>
+    <%= render partial: "footer" %>
+  </div>
+  
+  <div id="modal" class="modal hide fade in">
+    <div style="padding-top:10px;margin-bottom:10px;border-bottom:1px solid #eee" class="modal-header">
+      <h3><%= image_tag('login_header.gif') %></h3>
+    </div>
+    <div class="modal-body"></div>
+  </div>
+  <div id="register_modal" class="modal hide fade in">
+    <div style="padding:10px;margin-bottom:10px;border-bottom:1px solid #eee" class="modal-header">
+      <h3><%= image_tag('login_header.gif') %></h3>
+    </div>
+    <div class="modal-body"></div>
+  </div>
+</body>
+</html>

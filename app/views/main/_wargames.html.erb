@@ -1,0 +1,19 @@
+<div class="contentleft">
+  <h2>Wargames</h2>
+  <div class="box">
+    <div>      
+      <% @wargames.each do |wargame| %>
+        <div><span style="width:60px;float:left;padding-right:10px;text-align:right;font-weight:bold" class="<%= wargame.status %>"><%= wargame.status.upcase %></span><span><%= link_to wargame.name.upcase, wargame_path(wargame) %></span></div>
+        <% end %>
+    </div>
+  </div>
+  <h2>Affiliates</h2> 
+  <div class="box4">
+    <div>
+      <%= image_tag(@affiliates.first) %>
+    </div>
+    <div>
+      <%= image_tag(@affiliates.second) %>
+    </div>
+  </div>
+</div>

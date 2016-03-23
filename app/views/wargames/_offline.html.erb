@@ -1,0 +1,19 @@
+<div style="padding: 20px 0: max-height:480px;" id="content">
+  <h2><%= @wargame.name.upcase %> is currently down for maintenance.</h2>
+  <img src='/assets/kernel_panic.gif' style="padding-right:40px;margin:auto;">
+</div>
+<div id="subcontent">
+  <div class="small box2">
+    <h2>IRC</h2>
+    <p>Click here to join us at <%= link_to "irc.smashthestack.org #{session[:channel]}", irc_path %></p>
+  </div>
+  <div class="small box2">
+    <h2>FAQ Articles</h2>
+    <ul>
+      <li><%= link_to "How do I get started?", "/faq#a3" %></li>
+      <li><%= link_to "How do i get putty?", "/faq#a14" %></li>
+      <li><%= link_to "What IRC client should I use?", "/faq#a15" %></li>
+    </ul>
+  </div>
+</div>
+
